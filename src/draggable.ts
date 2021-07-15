@@ -1,4 +1,4 @@
-async function droppable(element: HTMLElement, callback: Function) {
+async function droppable(element: HTMLElement, callback: CallableFunction) {
     const classes: string[] = ['border-8', 'border-dashed', 'border-blue-500'];
 
     element.addEventListener('dragenter', (event: DragEvent) => {
@@ -34,7 +34,8 @@ async function droppable(element: HTMLElement, callback: Function) {
 
 ((document: Document) => {
     droppable(document.body, async (element: HTMLElement , transfer: DataTransfer) => {
-        const input: HTMLInputElement|null = element.querySelector('#clip');
+        let form: HTMLFormElement|null = element.querySelector('form');
+
         const urls: Set<string> = new Set();
 
         for (let i = 0; i < transfer.items.length; i++) {
@@ -46,11 +47,20 @@ async function droppable(element: HTMLElement, callback: Function) {
         }
 
         if (urls.size > 0) {
-            if (! input) {
+            if (! form) {
                 return;
             }
 
-            input.value = urls.values().next().value;
+            tap(form, (form: HTMLFormElement) => {
+                form.children.item(0)?.children.namedItem('clip')
+                    ?.setAttribute('value', urls.values().next().value);
+            }).submit();
         }
     });
 })(document);
+
+function tap<T extends HTMLElement>(element: T, callback: CallableFunction): T {
+    callback(element);
+
+    return element;
+}
