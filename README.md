@@ -28,7 +28,7 @@ Or, use `ts-watch` to watch for changes.
 yarn ts-watch
 ```
 
-Now you can test out the project in the browser by running the project on a local server, using something like [live-server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) for VS-code or [Laravel Valet](https://laravel.com/docs/8.x/valet).
+Now you can test out the project in the browser by running the project on a local server, using something like [live-server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) or [Laravel Valet](https://laravel.com/docs/8.x/valet).
 
 ## Demo in action.
 
