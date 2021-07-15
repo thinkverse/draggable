@@ -8,6 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 header('Location: /');
 
-$fp = fopen(__DIR__ . '/logs/draggable.log', 'a+');
+$fp = fopen(__DIR__ . '/logs/links.log', 'a+');
 fwrite($fp, print_r($_POST, true));
 fclose($fp);
