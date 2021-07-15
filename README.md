@@ -7,7 +7,7 @@ This repository is used for testing the browsers Drag-and-Drop API.
 To run this test project, clone the repo and install the dependencies.
 
 ```bash
-gh clone thinkverse/draggable
+gh repo clone thinkverse/draggable
 ```
 
 ```bash
