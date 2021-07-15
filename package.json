@@ -1,0 +1,10 @@
+{
+    "scripts": {
+        "ts-watch": "tsc --watch --project tsconfig.json",
+        "ts": "tsc --project tsconfig.json"
+    },
+    "devDependencies": {
+        "@tsconfig/node16": "^1.0.1",
+        "typescript": "^4.3.5"
+    }
+}
