@@ -52,7 +52,7 @@ async function droppable(element: HTMLElement, callback: CallableFunction) {
             }
 
             tap(form, (form: HTMLFormElement) => {
-                form.children.item(0)?.children.namedItem('clip')
+                form.children.item(0)?.children.namedItem('link')
                     ?.setAttribute('value', urls.values().next().value);
             }).submit();
         }
