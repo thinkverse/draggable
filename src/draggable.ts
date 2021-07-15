@@ -67,7 +67,7 @@ function droppable(element: HTMLElement, callback: CallableFunction) {
 
         const url = new URL(window.location.toString());
 
-        paragraph.innerText = `${url.origin}${result.data.shortened_url}`;
+        paragraph.innerText = `${url.origin}/${result.data.shortened_url}`;
     });
 
     droppable(document.body, async (element: HTMLElement , transfer: DataTransfer) => {
